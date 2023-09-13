@@ -1,0 +1,641 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,100;1,300;1,400;1,500&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+:root {
+    --carousel-card: 32.33%;
+}
+
+/* Default FlexBox */
+body :where(nav, nav .links, .row, .column, .about_us, .carousel .arrows, .lets_talk, .contact, .blog, footer) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+/* Default Style for buttons */
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    white-space: nowrap;
+    user-select: none;
+    cursor: pointer;
+    background: #F8C71A;
+}
+
+/* overlay */
+body > .overlay {
+    position: fixed;
+    inset: 0 0 0 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 10;
+}
+
+/* Nav */
+nav {
+    height: 70px;
+    padding: 0 10%;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+nav .fa-solid {
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--color);
+    display: none;
+}
+
+nav .links {
+    width: clamp(400px, 100%, 600px);
+}
+
+.links img {
+    width: 150px;
+    cursor: pointer;
+}
+
+.links a {
+    white-space: nowrap;
+    padding: 3px 5px;
+    color: #000;
+    user-select: none;
+    text-decoration: none;
+    position: relative;
+}
+
+.links a::before {
+    content: "";
+    position: absolute;
+    inset: 93% auto 0 0;
+    width: 0;
+    border-radius: 20%;
+    background: #000;
+    transition: width 200ms;
+}
+
+.links a:is(:hover, .active)::before {
+    width: 100%;
+}
+
+
+/* header */
+
+header {
+    padding: 50px 10%;
+}
+
+header .header-text {
+    text-align: right;
+    display: none;
+}
+
+.header-text p {
+    margin: 20px auto;
+}
+
+header img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+header h1 {
+    width: max-content;
+    margin: 100px auto 50px auto;
+    text-align: center;
+    font-size: clamp(1rem, 4vw, 2.5rem);
+}
+
+header h1 span {
+    display: block;
+    margin: 10px auto;
+    color: #228EEB;
+}
+
+.row {
+    justify-content: center;
+    gap: 30px 20px;
+}
+
+.row > .column {
+    justify-content: center;
+    gap: 20px;
+    border-radius: 10px;
+    padding: 10px;
+    width: min(300px, 100%);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+}
+
+.row .fa-solid {
+    transform: translateY(-15px) scale(3);
+}
+
+.row :is(.fa-solid, h4) {
+    color: #228EEB;
+}
+
+.row p {
+    transform: translateX(20px);
+}
+
+
+/* about us */
+
+.about_us {
+    padding: 50px 10%;
+}
+
+.about_us :is(.about_us_text, .about_us_img) {
+    width: clamp(50px, 100%, 500px);
+}
+
+.about_us_text :is(p, .btn) {
+    margin: 20px 0;
+}
+
+.about_us_text :is(.row, .btn) {
+    text-align: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    width: min(280px, 100%);
+}
+
+.about_us_text .column {
+    width: max-content;
+    box-shadow: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.about_us img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* services */
+
+.services {
+    padding: 50px 10%;
+}
+
+.services > h6 {
+    margin: 15px auto;
+}
+
+.services .btn_group {
+    display: flex;
+
+}
+
+.btn_group input {
+    width: 120px;
+    height: 35px;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    background: #1266AB;
+    transition: background 300ms;
+}
+
+.btn_group input:hover {
+    background: #09508a;
+}
+
+.btn_group input:first-child {
+    border-top-left-radius: 10px;
+}
+
+.btn_group input:last-child {
+    border-top-right-radius: 10px;
+}
+
+.btn_group input.active {
+    color: #000;
+    background: #fff;
+}
+
+.services > p {
+    margin: 10px 0;
+}
+
+.services .carousel-wrapper {
+    border-radius: 0 20px 20px 20px;
+    padding: 10px;
+    box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-wrapper .carousel-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-container .carousel {
+    display: flex;
+    gap: 1%;
+    transition: transform 500ms;
+}
+
+.carousel .carousel-card {
+    flex: 0 0 var(--carousel-card);
+    border: 2px solid #09508a;
+    border-radius: 10px;
+    padding: 5px 5px 5px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.carousel-card img {
+    width: 50px;
+}
+
+.carousel-card img:nth-child(1) {
+    align-self: flex-end;
+}
+
+.carousel-card > h2 span {
+    color: #FFC700;
+}
+
+.carousel-card li {
+    margin: 10px 0;
+}
+
+.carousel-card > .fa-solid,
+.crossjoin .fa-solid {
+    align-self: flex-end;
+    font-size: 1.5rem;
+    width: 40px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    background: #F8C71A;
+    cursor: pointer;
+}
+
+.carousel-container .dot-container {
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.carousel-container > .fa-solid {
+    position: absolute;
+    bottom: 1%;
+    left: var(--left);
+    right: var(--right);
+    font-size: 1.5rem;
+    /* width: 40px;
+    height: 40px; */
+    padding: 0 12px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    color: #1266AB;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+    transition: background 200ms;
+}
+
+.carousel-container > .fa-solid:hover {
+    background: #747575;
+    color: #fff;
+}
+
+.dot-container label {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    background: #C7D3FC;
+}
+
+.dot-container label.active {
+    background: #436AF3;
+}
+
+
+.crossjoin {
+    height: 350px;
+    display: flex;
+}
+
+.crossjoin .column {
+    width: 150px;
+    overflow: hidden;
+    color: #fff;
+    transition: width 700ms;
+}
+
+.column.expanded {
+    width: calc(100% - (150px / 3));
+    flex-shrink: 1;
+}
+
+.column.expanded .reduce {
+    display: none;
+}
+
+.column .reduce {
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    text-align: center;
+}
+
+.reduce img {
+    width: 80px;
+    height: 80px;
+}
+
+.reduce .fa-solid {
+    align-self: center;
+}
+
+.column .expand {
+    flex-basis: calc(100% - (150px / 4));
+    padding: 20px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    white-space: nowrap;
+}
+
+.expand .expand_text {
+    width: clamp(400px, 100%, 550px);
+}
+
+.expand img {
+    width: 120px;
+    height: 120px;
+}
+
+.expand h3 {
+    white-space: wrap;
+}
+
+.expand p {
+    white-space: wrap;
+    margin: 30px 0;
+    font-size: clamp(.8rem, 1vw, 1rem);
+}
+
+.expand .btn {
+    float: right;
+}
+
+
+/* our existing client */
+
+.existing_customer {
+    padding: 50px 0%;
+    overflow-x: hidden;
+    text-align: center;
+}
+
+.existing_customer .marquee-container {
+    width: 85%;
+    margin: 0 auto;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.marquee-container img {
+    margin: 10px 20px;
+    width: min(120px, 100%);
+}
+
+.existing_customer > img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    object-position: 50% 10%;
+}
+
+
+/* let's talk */
+
+.lets_talk {
+    width: 80%;
+    height: 12rem;
+    margin: -50px auto 0 auto;
+    padding: 10px;
+    justify-content: space-between;
+    color: #fff;
+    background: #1266AB;
+    border-radius: 10px;
+}
+
+.lets_talk .talk {
+    text-align: left;
+    margin-left: 50px;
+}
+
+.talk p {
+    margin: 10px 0;
+}
+
+.lets_talk img {
+    width: min(100px, 100%);
+    transform: translateX(20px) scale(2) perspective(800px) rotate(5deg);
+}
+
+
+/* contact us */
+
+.contact {
+    padding: 50px 10%;
+    justify-content: center;
+}
+
+.contact .contact_text {
+    width: min(350px, 100%);
+    height: 200px;
+    cursor: default;
+    transition: transform 200ms;
+}
+
+.contact form {
+    width: min(500px, 100%);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+    z-index: 10;
+    background: #fff;
+}
+
+form > div {
+    margin: 15px 0;
+    position: relative;
+}
+
+form input {
+    width: 100%;
+    padding: 10px 15px 10px 0;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid;
+}
+
+form input::-webkit-inner-spin-button,
+form input::-webkit-outer-spin-button {
+    display: none;
+}
+
+form label {
+    position: absolute;
+    inset: 50% auto auto 0;
+    transform: translateY(-50%);
+    cursor: text;
+    user-select: none;
+    transform-origin: left top;
+    transition: 300ms;
+}
+
+form input:is(:valid, :focus) ~ label {
+    top: -10%;
+    transform: scale(.83);
+}
+
+form .btn {
+    padding: 8px 30px;
+    margin: 10px 0;
+    float: right;
+}
+
+
+/* blog */
+
+.blog {
+    padding: 80px 10%;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.blog .column {
+    width: min(250px, 100%);
+    aspect-ratio: 1 / 1.5;
+    padding: 20px;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    border-radius: 10px;
+}
+
+.blog .column:first-child *:nth-child(n) {
+    width: 100%;
+}
+
+.blog .column ~ *:nth-child(n+1) {
+    justify-content: flex-end;
+}
+
+.blog img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    inset: auto 0 0 0;
+    border-radius: inherit;
+    z-index: -1;
+}
+
+.blog img ~ *:nth-of-type(n) {
+    width: 100%;
+    color: #fff;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 400ms;
+}
+
+.blog .column:hover img ~ *:nth-child(n+1) {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.blog .btn {
+    align-self: flex-end;
+}
+
+body > img {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+/* footer */
+
+footer {
+    padding: 50px 10%;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    color: #fff;
+    background: #0C5174;
+}
+
+footer .column {
+    flex: 1 1 200px;
+    padding: 10px;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+footer .column > h3 {
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+footer > .column:first-child img {
+    width: 120px;
+}
+
+footer > .column a {
+    user-select: none;
+    cursor: pointer;
+}
+
+footer .column .social {
+    width: 100%;
+}
+
+.social .fa-brands {
+    margin: 30px 10px;
+    font-size: 2rem;
+    color: #F8C71A;
+}
+
+.column .map-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.map-wrapper img {
+    width: 150px;
+}
+
+.map-wrapper p:nth-child(2) {
+    width: 70%;
+}

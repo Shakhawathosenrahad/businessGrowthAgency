@@ -1,0 +1,35 @@
+[
+    {
+        "serverLink": "https://shakhawathosenrahad.github.io/mockjson/db.json",
+        "img": "./img/chile.png",
+        "h5": "Chile - Portugal Chamber of Commerce",
+        "desc": "Crossjoin optimizes technology to perfection, enhancing lives. They excel in firefighting project issues, load testing, advisory, and managed services with unrivaled expertise.By partnering up with Saravá Sales, Crossjoin expanded internationally, opening it's second office in South America.",
+        "arrow": "fa-solid fa-arrow-right",
+        "btn": "Chile Website",
+        "bgcolor": "style='background-color: #2372B8;'"
+    },
+    {
+        "img": "./img/back2bio.png",
+        "h5": "Chile - Portugal Chamber of Commerce",
+        "desc": "Crossjoin optimizes technology to perfection, enhancing lives. They excel in firefighting project issues, load testing, advisory, and managed services with unrivaled expertise.By partnering up with Saravá Sales, Crossjoin expanded internationally, opening it's second office in South America.",
+        "arrow": "fa-solid fa-arrow-right",
+        "btn": "Chile Website",
+        "bgcolor": "style='background-color: #135FA3;'"
+    },
+    {
+        "img": "./img/labs.png",
+        "h5": "Chile - Portugal Chamber of Commerce",
+        "desc": "Crossjoin optimizes technology to perfection, enhancing lives. They excel in firefighting project issues, load testing, advisory, and managed services with unrivaled expertise.By partnering up with Saravá Sales, Crossjoin expanded internationally, opening it's second office in South America.",
+        "arrow": "fa-solid fa-arrow-right",
+        "btn": "Chile Website",
+        "bgcolor": "style='background-color: #0F4F87;'"
+    },
+    {
+        "img": "./img/crossjoin.png",
+        "h5": "Chile - Portugal Chamber of Commerce",
+        "desc": "Crossjoin optimizes technology to perfection, enhancing lives. They excel in firefighting project issues, load testing, advisory, and managed services with unrivaled expertise.By partnering up with Saravá Sales, Crossjoin expanded internationally, opening it's second office in South America.",
+        "arrow": "fa-solid fa-arrow-right",
+        "btn": "Chile Website",
+        "bgcolor": "style='background-color: #2D87D4;'"
+    }
+]
