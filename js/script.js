@@ -103,9 +103,7 @@ const button_texts = ["Chile", "Impossible Labs", "Back 2 Bio", "Crossjoin Websi
 
 let element;
 
-// https://shakhawathosenrahad.github.io/mockjson/db.json
-
-fetch('./data.json')
+fetch('https://shakhawathosenrahad.github.io/businessGrowthAgency/data.json')
       .then(res => res.json())
       .then(data => {
         for (let i = data.length-1; i >= 0; i--) {
