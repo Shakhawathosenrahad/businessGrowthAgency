@@ -627,7 +627,7 @@ footer .column .social {
 }
 
 .map-wrapper img {
-    width: 120px;
+    width: clamp(120px, 100%, 150px);
 }
 
 .map-wrapper p:nth-child(2) {
